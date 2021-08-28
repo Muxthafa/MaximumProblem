@@ -56,7 +56,7 @@ public class maximumProblem<S extends Comparable<S>> {
 			return max;
 		}
 		
-		//to print the maximum value
+		//to print the maximum value for 3 parameters
 		public static <S> void printMax(S x, S y, S z, S max) {
 			System.out.printf("Maximum of %s,%s and %s is %s\n", x, y, z, max);
 		}
