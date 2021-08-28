@@ -1,29 +1,29 @@
 package generics;
 
-public class maximumProblem<F extends Comparable<F>> {
+public class maximumProblem<S extends Comparable<S>> {
 		
-		F x,y,z;  //class variables
+		S x,y,z;  //class variables
 		
 		//parameterized constructors
-		public maximumProblem(F x,F y,F z) {
+		public maximumProblem(S x,S y,S z) {
 			this.x=x;
 			this.y=y;
 			this.z=z;
 		}
 		
 		//@method used to get the maximum value
-		 public F maximum()
+		 public S maximum()
 		 {
 			 return maximumProblem.maximum(x, y, z);
 		 }
 		 
 		/*@method used to compare between elements
-		 * takes 3 float values
+		 * takes 3 string values
 		 * returns maximum of all
 		 */
-		public static <F extends Comparable<F>> F maximum(F x,F y,F z) 
+		public static <S extends Comparable<S>> S maximum(S x,S y,S z) 
 		{
-			F max=x;     				//initially set maximum to x, then compare with y and z
+			S max=x;     				//initially set maximum to x, then compare with y and z
 			if(y.compareTo(max)>0) {
 				max=y;
 			}
@@ -35,7 +35,7 @@ public class maximumProblem<F extends Comparable<F>> {
 		}
 		
 		//to print the maximum value
-		public static <F> void printMax(F x,F y,F z,F max)
+		public static <S> void printMax(S x,S y,S z,S max)
 		{
 			System.out.printf("Maximum of %s,%s and %s is %s\n",x,y,z,max);
 		}
@@ -44,16 +44,16 @@ public class maximumProblem<F extends Comparable<F>> {
 		// TODO Auto-generated method stub
 			
 			//testcase 1
-			float xfloat=100.00f,yfloat=50.6f,zfloat=25.3f;
-			new maximumProblem(xfloat,yfloat,zfloat).maximum();
+			String xStr="peach",yStr="apple",zStr="banana";
+			new maximumProblem(xStr,yStr,zStr).maximum();
 			
 			//Testcase 2
-			float afloat=50.0f,bfloat=100.44f,cfloat=25.9f;
-			new maximumProblem(afloat,bfloat,cfloat).maximum();
+			String aStr="banana",bStr="peach",cStr="apple";
+			new maximumProblem(bStr,cStr,aStr).maximum();
 			
 			//Testcase 3
-			float mfloat=25.9f,nfloat=50.5f,ofloat=100.7f;
-			new maximumProblem(mfloat,nfloat,ofloat).maximum();
+			String pStr="apple",qStr="banana",rStr="peach";
+			new maximumProblem(rStr,pStr,qStr).maximum();
 
 	}
 
