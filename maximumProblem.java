@@ -1,29 +1,29 @@
 package generics;
 
-public class maximumProblem<T extends Comparable<T>> {
+public class maximumProblem<F extends Comparable<F>> {
 		
-		T x,y,z;  //class variables
+		F x,y,z;  //class variables
 		
 		//parameterized constructors
-		public maximumProblem(T x,T y,T z) {
+		public maximumProblem(F x,F y,F z) {
 			this.x=x;
 			this.y=y;
 			this.z=z;
 		}
 		
 		//@method used to get the maximum value
-		 public T maximum()
+		 public F maximum()
 		 {
 			 return maximumProblem.maximum(x, y, z);
 		 }
 		 
 		/*@method used to compare between elements
-		 * takes 3 integer values
+		 * takes 3 float values
 		 * returns maximum of all
 		 */
-		public static <T extends Comparable<T>> T maximum(T x,T y,T z) 
+		public static <F extends Comparable<F>> F maximum(F x,F y,F z) 
 		{
-			T max=x;     				//initially set maximum to x, then compare with y and z
+			F max=x;     				//initially set maximum to x, then compare with y and z
 			if(y.compareTo(max)>0) {
 				max=y;
 			}
@@ -35,7 +35,7 @@ public class maximumProblem<T extends Comparable<T>> {
 		}
 		
 		//to print the maximum value
-		public static <T> void printMax(T x,T y,T z,T max)
+		public static <F> void printMax(F x,F y,F z,F max)
 		{
 			System.out.printf("Maximum of %s,%s and %s is %s\n",x,y,z,max);
 		}
@@ -43,17 +43,17 @@ public class maximumProblem<T extends Comparable<T>> {
 		public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			
-			//test case 1
-			int xInt=10,yInt=5,zInt=2;
-			new maximumProblem(xInt,yInt,zInt).maximum();
+			//testcase 1
+			float xfloat=100.00f,yfloat=50.6f,zfloat=25.3f;
+			new maximumProblem(xfloat,yfloat,zfloat).maximum();
 			
-			//Test case 2
-			int aInt=5,bInt=10,cInt=2;
-			new maximumProblem(aInt,bInt,cInt).maximum();
+			//Testcase 2
+			float afloat=50.0f,bfloat=100.44f,cfloat=25.9f;
+			new maximumProblem(afloat,bfloat,cfloat).maximum();
 			
-			//Test case 3
-			int mInt=2,nInt=5,oInt=10;
-			new maximumProblem(mInt,nInt,oInt).maximum();
+			//Testcase 3
+			float mfloat=25.9f,nfloat=50.5f,ofloat=100.7f;
+			new maximumProblem(mfloat,nfloat,ofloat).maximum();
 
 	}
 
